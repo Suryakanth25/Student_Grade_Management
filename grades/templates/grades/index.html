@@ -1,0 +1,15 @@
+<h1>Student Grading System</h1>
+{% block content %}
+<form method="POST">
+    {% csrf_token%}
+    {{form.as_p}}
+    <button type="submit">Caclulate</button>
+</form>
+
+{% if total %}
+<h1>Results</h1>
+<p>Total: {{total}}</p>
+<p>Average: {{average}}</p>
+<p>Grade: {{grade}}</p>
+{% endif %}
+{% endblock %}
